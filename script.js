@@ -12,8 +12,6 @@ function createBoard(columns){
     number = parseInt(inp.value)
     if(number <= 6 && number%2 == 0){
         S = number*number
-        board.style.display = 'none'
-        game.style.height = '125px'
     } else{
         inp.value = 4
     }
