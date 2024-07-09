@@ -7,17 +7,25 @@
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-    <div class="game">
-        <div class="menu">
-            <h1 class="couples">Пары</h1>
-            <h5 class="steps">Шаги: 0 шагов</h5>
-            <h5 class="sec">Время: 60сек</h5>
+    <div class="content">
+        <div class="game">
+            <div class="menu">
+                <h1 class="couples">Пары</h1>
+                <h5 class="steps">Шаги: 0 шагов</h5>
+                <h5 class="sec">Время: 60сек</h5>
+            </div>
+            <div class="board">
+                <h2 class="setting">Настройте количество карточек (от 2 до 6)</h2>
+                <form class="board__form">
+                    <input class="inp" max="6" min="2" step="2" placeholder="По горизонтали/вертикали" type="number">
+                    <button class="button start">НАЧАТЬ</button>
+                </form>
+            </div>
         </div>
-        <div class="board">
-            <h2 class="setting">Настройте количество карточек (от 2 до 6)</h2>
-            <input class="inp" type="number">
-            <button class="start">НАЧАТЬ</button>
-        </div>
+        <template id="gameTableTemplate">
+            <div class="table"></div>
+            <button class="button table__button">Рестарт</button>
+        </template>
     </div>
     
     <script src="./script.js"></script>

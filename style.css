@@ -1,76 +1,121 @@
-*{
-    padding: 0px;
-    margin: 0px;
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
 }
 
-body{
-    width: 100%;
-    height: 100%;
+body {
+  font-family: Verdana, sans-serif;
 }
 
-.game{
-    height: 330px;
-    width: 600px;
-    margin: 140px auto;
-    box-shadow: 1px 1px 5px 1px rgb(168, 168, 168);
-    border-radius: 10px;
+/* Обертка всего контента игры */
+.content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: black;
+  min-height: 100vh;
 }
 
+/* В этом элементе сгруппированы все элементы карточки игры: заголовки, игровая информация, поле ввода, кнопка, а в будущем и игровое поле */
+.game {
+  background-color: transparent;
+  border: 2px solid rgba(255, 255, 255, .2);
+  backdrop-filter: blur(20px);
+  box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+  border-radius: 10px;
+  padding: 30px 40px;
+}
+
+/* Элемент, в котором группируются вся игровая информация: название игры, кол-во шагов и оставшееся время */
+.menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Название игры */
 .couples{
-    position: absolute;
-    margin-top: 40px;
-    margin-left: 33px;
+  font-size: 36px;
+  text-align: center;
+  margin: 15px 0;
 }
 
-.steps{
-    position: absolute;
-    margin-top: 50px;
-    margin-left: 220px;
-    color: rgb(115, 115, 115);
-    font-weight: 10;
-    font-size: 18px;
+/* Поле ввода числового типа */
+.inp {
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  outline: none;
+  border: 2px solid rgba(0,0,0, .2);
+  border-radius: 40px;
+  font-size: 16px;
+  padding: 20px 45px 20px 20px;
+  margin: 30px 0;
+
 }
 
-.sec{
-    position: absolute;
-    margin-top: 50px;
-    margin-left: 450px;
-    color: rgb(115, 115, 115);
-    font-weight: 10;
-    font-size: 18px;
+/* Стили для замещающего текста внутри поля ввода */
+.board__inp::placeholder {
+  color: black;
 }
 
-.setting{
-    width: 550px;
-    height: 50px;
-    position: absolute;
-    margin-top: 110px;
-    margin-left: 33px;
-    font-size: 28px;
+/* Стили для состояния focus поля ввода */
+.board__inp:focus {
+  border: 2px solid black;
 }
 
-.inp{
-    width: 520px;
-    height: 50px;
-    position: absolute;
-    border-radius: 25px;
-    padding-left: 10px;
-    padding-right: 10px;
-    border: 2px solid rgb(168, 168, 168);
-    margin-top: 180px;
-    margin-left: 30px;
+/* Кнопка "Начать" */
+.start  {
+  width: 100%;
+  font-size: 20px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  background: #fff;
+  color:#000;
+  border-radius: 40px;
+  padding: 20px;
+  cursor: pointer;
 }
 
-.start{
-    width: 550px;
-    height: 50px;
-    position: absolute;
-    border-radius: 25px;
-    margin-top: 255px;
-    margin-left: 25px;
+/* Состояние наведения курсора мыши на кнопку */
+.button:hover{
+  color: rgba(181, 13, 181, 0.7);
+}
+
+
+.table {
+    display: grid;
+    min-width: 500px;
+    max-width: 1000px;
+    margin-bottom: 20px;
+    gap: 10px;
+}
+
+.card {
+    aspect-ratio: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(218, 69, 218, 0.6);
+    border-radius: 5px;
+    transition: .3s;
+    font-size: 30px;
     cursor: pointer;
 }
 
-.start:hover {
-    color: rgb(234, 95, 255);
+.card:hover {
+    background-color: rgba(218, 69, 218, 1);
+}
+
+.button {
+    width: 100%;
+    font-size: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    background: #fff;
+    color: #000;
+    border-radius: 40px;
+    padding: 20px;
+    cursor: pointer;
 }
