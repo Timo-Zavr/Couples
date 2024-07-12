@@ -5,13 +5,13 @@ const gameBoard = document.querySelector('.game')
 
 
 let number;
-let S;
+let count;
 start.addEventListener('click', createBoard)
 
-function createBoard(columns){
+function createBoard(columns, count){
     number = parseInt(inp.value)
     if(number <= 6 && number%2 == 0){
-        S = number*number
+      count = number*number
     } else{
         inp.value = 4
     }
@@ -31,6 +31,10 @@ function createBoard(columns){
   grid-template-rows: repeat(${columns}, 1fr);
   `;
 
+  for (let i = 0; i < count; i++) {
+    gameTable.append(createCard());
+  }
+
   // Получившаяся таблица добавляется в игровое поле
   gameBoard.append(gameTable);
 
@@ -41,4 +45,16 @@ function createBoard(columns){
   });
   // Добавление кнопки "Рестарт" в игровое поле
   gameBoard.append(restartBtn);
+
+
+}
+
+function createCard(){
+  const template = document.querySelector('#cardTemplate').cloneNode(true).content;
+  const gameCard = template.querySelector('.card');
+  gameCard.querySelector('#flippedIcon').classList.add(`fa-${flippedIcon}`)
+  gameCard.style = `
+  grid-template-columns: repeat(${columns}, 1fr);
+  grid-template-rows: repeat(${columns}, 1fr);
+  `
 }
