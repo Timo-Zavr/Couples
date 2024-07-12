@@ -27,16 +27,16 @@ function createBoard(count, columns){
   // В шаблоне находится кнопка "Рестарт"
   const restartBtn = template.querySelector(".table__button");
 
-  for (let i = 0; i < count; i++) {
-    gameTable.append(createCard());
-  }
-
+  
   // Добавляются правила для grid-контейнера в зависимости от значения параметра columns
   gameTable.style = `
   grid-template-columns: repeat(${columns}, 1fr);
   grid-template-rows: repeat(${columns}, 1fr);
   `;
-
+  
+  for (let i = 0; i < count; i++) {
+    gameTable.append(createCard());
+  }
 
   // Получившаяся таблица добавляется в игровое поле
   gameBoard.append(gameTable);
