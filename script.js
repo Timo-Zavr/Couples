@@ -59,11 +59,11 @@ function createBoard(count, columns){
   gameBoard.append(restartBtn);
 }
 
-function createCard(flippedIcon, icon){
+function createCard(flippedIcon){
   const template = document.querySelector('#cardTemplate').cloneNode(true).content;
   const gameCard = template.querySelector('.card');
   gameCard.querySelector('#flippedIcon').classList.add(`fa-${flippedIcon}`)
-  gameCard.addEventListener("click", () => gameLogic(card))
+  gameCard.addEventListener("click", () => gameLogic(gameCard))
   return gameCard
 }
 
@@ -114,7 +114,7 @@ function shuffleArray(array){
   return array
 }
 
-function gameLogic(card){
+function gameLogic(card) {
   // Если обе карточки не кликабельны, ничего не делаем
   if (!couple.firstClickable && !couple.secondClickable) return;
 
@@ -128,8 +128,8 @@ function gameLogic(card){
     couple.firstClickable = false;
   } else if (couple.second === null && couple.first !== card) {
     // Если да, то проверяем, кликнута ли вторая карточка и не является ли вторая карточка той же самой карточкой, что и первая, и если нет, то сохраняем ссылку на эту карточку и считаем ее кликнутой
-    couple.second = card
-    couple.secondClickable = false
+    couple.second = card;
+    couple.secondClickable = false;
   }
 
   // Если какой-либо карточки не кликнуто, ничего не делаем
@@ -165,5 +165,17 @@ function gameLogic(card){
     couple.second = null;
     couple.firstClickable = true;
     couple.secondClickable = true;
+  }
+
+  isWin()
+}
+
+function isWin() {
+  const gameTable = document.querySelector('.table');
+  if (Array.from(gameTable.children).every((card) => card.classList.contains('flip'))) {
+    setTimeout(() => {
+      // clearInterval(intervalId);
+      alert("Вы победили!");
+    }, 1500)
   }
 }

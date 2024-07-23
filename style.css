@@ -6,6 +6,10 @@
 
 body {
   font-family: Verdana, sans-serif;
+  background-image: url(./Фон.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 /* Обертка всего контента игры */
@@ -120,10 +124,33 @@ body {
     cursor: pointer;
 }
 
-.default-icon {
+.card.flip {
+  background: #e11284;
+  transform: perspective(100px) rotateY(180deg);
+  user-select: none;
+  }
+  
+  .default-icon {
   display: block;
-}
-
-.flipped-icon {
+  pointer-events: none;
+  /* display: none; */
+  }
+  
+  .flipped-icon {
   display: none;
-}
+  pointer-events: none;
+  /* display: block; */
+  }
+  
+  .card.flip .flipped-icon {
+  display: block;
+  }
+  
+  .card.flip .default-icon {
+  display: none;
+  }
+  
+  .card.successfully {
+  background: #1dd032;
+  transform: scale(0.95);
+  }
