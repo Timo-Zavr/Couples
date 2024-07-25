@@ -1,3 +1,5 @@
+import { gameLogic } from "./gameLogic.js";
+
 function createCard(flippedIcon){
     const template = document.querySelector('#cardTemplate').cloneNode(true).content;
     const gameCard = template.querySelector('.card');

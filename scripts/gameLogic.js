@@ -1,3 +1,6 @@
+import { totalTime, stopTimer } from "./timer.js";
+let totalFlips = 0;
+
 const couple = {
     first: null,
     firstClickable: true,
@@ -66,10 +69,10 @@ function gameLogic(card) {
     const gameTable = document.querySelector('.table');
     if (Array.from(gameTable.children).every((card) => card.classList.contains('flip'))) {
       setTimeout(() => {
-        // clearInterval(intervalId);
+        stopTimer()
         alert("Вы победили!");
       }, 1500)
     }
   }
 
-export {gameLogic}
+export {gameLogic, totalFlips}

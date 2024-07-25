@@ -1,5 +1,6 @@
+import { totalFlips } from "./gameLogic.js";
+
 let totalTime = 60;
-let totalFlips = 0;
 let intervalId;
 
 function startTimer() {
@@ -16,4 +17,8 @@ function startTimer() {
     }, 1000);
 }
 
-export {startTimer}
+function stopTimer(){
+    clearInterval(intervalId)
+}
+
+export {startTimer, totalTime, stopTimer}

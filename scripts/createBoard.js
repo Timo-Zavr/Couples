@@ -1,10 +1,9 @@
-const board = document.querySelector('.board')
-const start = document.querySelector('.start')
-const inp = document.querySelector('.inp')
-const gameBoard = document.querySelector('.game')
+import { createCard, createIconsArray } from "./cards.js";
+import { startTimer } from "./timer.js";
 
 function createBoard(count, columns){
-
+    
+    const gameBoard = document.querySelector('.board')
     gameBoard.textContent = "";
 
   // Создание клона шаблона

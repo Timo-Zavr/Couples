@@ -1,7 +1,6 @@
-import { createBoard } from "./scripts/createBoard";
-import { createCard, createIconsArray } from "./scripts/cards";
-import { gameLogic } from "./scripts/gameLogic";
-import { startTimer } from "./scripts/timer";
+import { createBoard } from "./scripts/createBoard.js";
+const start = document.querySelector('.start')
+const inp = document.querySelector('.inp')
 
 start.addEventListener('click', (event) =>{
   event.preventDefault()
@@ -14,5 +13,4 @@ start.addEventListener('click', (event) =>{
       return
   }
   createBoard(count, columns)
-  createIconsArray()
 })
