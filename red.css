@@ -7,12 +7,12 @@
 body {
   font-family: Verdana, sans-serif;
   background-image: url(./backrounds/Red.jpg);
+  /* Красный элемент огня, шлёт огроные беды, ведя за ними счастливые перемены */
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 }
 
-/* Обертка всего контента игры */
 .content {
   display: flex;
   align-items: center;
@@ -21,7 +21,6 @@ body {
   min-height: 100vh;
 }
 
-/* В этом элементе сгруппированы все элементы карточки игры: заголовки, игровая информация, поле ввода, кнопка, а в будущем и игровое поле */
 .game {
   background-color: transparent;
   border: 2px solid rgba(255, 255, 255, .2);
@@ -31,21 +30,18 @@ body {
   padding: 30px 40px;
 }
 
-/* Элемент, в котором группируются вся игровая информация: название игры, кол-во шагов и оставшееся время */
 .menu {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-/* Название игры */
 .couples{
   font-size: 36px;
   text-align: center;
   margin: 15px 0;
 }
 
-/* Поле ввода числового типа */
 .inp {
   width: 100%;
   height: 100%;
@@ -60,17 +56,14 @@ body {
 
 }
 
-/* Стили для замещающего текста внутри поля ввода */
 .board__inp::placeholder {
   color: black;
 }
 
-/* Стили для состояния focus поля ввода */
 .board__inp:focus {
   border: 2px solid black;
 }
 
-/* Кнопка "Начать" */
 .start  {
   width: 100%;
   font-size: 20px;
@@ -83,7 +76,6 @@ body {
   cursor: pointer;
 }
 
-/* Состояние наведения курсора мыши на кнопку */
 .button:hover{
   color: rgb(255, 23, 38);
 }
@@ -172,13 +164,11 @@ body {
   .default-icon {
   display: block;
   pointer-events: none;
-  /* display: none; */
   }
   
   .flipped-icon {
   display: none;
   pointer-events: none;
-  /* display: block; */
   }
   
   .card.flip .flipped-icon {
