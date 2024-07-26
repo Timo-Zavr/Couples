@@ -4,17 +4,17 @@ let totalTime = 60;
 let intervalId;
 
 function startTimer() {
-    const time = document.querySelector(".state__time");
-    const moves = document.querySelector(".state__moves");
+  const moves = document.querySelector(".steps");
+  const time = document.querySelector(".sec");
   
-    intervalId = setInterval(() => {
-      totalTime--;
-      moves.textContent = `Шаги: ${totalFlips} шагов`;
-      time.textContent = `Время: ${totalTime} сек`;
-      if (totalTime === 0) {
-        clearInterval(intervalId);
-      }
-    }, 1000);
+  intervalId = setInterval(() => {
+    totalTime--;
+    moves.textContent = `Шаги: ${totalFlips} шагов`;
+    time.textContent = `Время: ${totalTime} сек`;
+    if (totalTime === 0) {
+      clearInterval(intervalId);
+    }
+  }, 1000);
 }
 
 function stopTimer(){

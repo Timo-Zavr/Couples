@@ -25,6 +25,7 @@ function gameLogic(card) {
       // Если да, то проверяем, кликнута ли вторая карточка и не является ли вторая карточка той же самой карточкой, что и первая, и если нет, то сохраняем ссылку на эту карточку и считаем ее кликнутой
       couple.second = card;
       couple.secondClickable = false;
+      totalFlips++
     }
   
     // Если какой-либо карточки не кликнуто, ничего не делаем
@@ -39,6 +40,7 @@ function gameLogic(card) {
         // То перекрашиваем их в зеленый с задержкой в 1 секунду
         couple.first.classList.add('successfully');
         couple.second.classList.add('successfully');
+        totalFlips++
   
         // Сбрасываем все ссылки и состояния
         refresh();
