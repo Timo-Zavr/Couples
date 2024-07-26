@@ -85,7 +85,7 @@ body {
 
 /* Состояние наведения курсора мыши на кнопку */
 .button:hover{
-  color: rgba(255, 23, 38, 0.7);
+  color: rgb(255, 23, 38);
 }
 
 
@@ -115,17 +115,19 @@ body {
 }
 
 .colors {
+  display: flex;
+  justify-content: center;
   width: 100%;
   font-size: 20px;
   border-radius: 40px;
-  padding: 20px;
-  margin-bottom: 0px;
-  margin-top: 0px;
+  padding: 0px;
+  margin-bottom: 30px;
+  margin-top: 30px;
+  gap: 50px;
 }
 .C {
   width: 75px;
   height: 75px;
-  margin-left: 50px;
   border-radius: 25px;
   border: 2px solid rgb(0, 0, 0);
   cursor: pointer;
@@ -141,6 +143,9 @@ body {
 }
 .yellow {
   background-color: rgba(255, 224, 20, 0.3);
+}
+.violet {
+  background-color: rgba(212, 20, 255, 0.3);
 }
 
 .button {

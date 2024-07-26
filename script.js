@@ -7,6 +7,7 @@ const Rbut = document.querySelector(".red")
 const Gbut = document.querySelector(".green")
 const Bbut = document.querySelector(".blue")
 const Ybut = document.querySelector(".yellow")
+const Vbut = document.querySelector(".violet")
 
 Rbut.addEventListener('click', (event) => {
   event.preventDefault()
@@ -23,6 +24,10 @@ Bbut.addEventListener('click', (event) => {
 Ybut.addEventListener('click', (event) => {
   event.preventDefault()
   styledElement.href = './yellow.css'
+})
+Vbut.addEventListener('click', (event) => {
+  event.preventDefault()
+  styledElement.href = './violet.css'
 })
 
 start.addEventListener('click', (event) =>{
