@@ -1,4 +1,6 @@
 import { totalTime, stopTimer } from "./timer.js";
+import { generateConfetti } from "./confetti.js"; 
+let confettiArray = generateConfetti(100)
 let totalFlips = 0;
 
 const couple = {
@@ -6,6 +8,13 @@ const couple = {
     firstClickable: true,
     second: null,
     secondClickable: true
+}
+
+function startConfetti() {
+  let confettiElement = document.querySelector('.confetti')
+  confettiArray.forEach((item) => {
+      confettiElement.append(item);
+  })
 }
   
 function gameLogic(card) {
@@ -72,6 +81,7 @@ function gameLogic(card) {
     if (Array.from(gameTable.children).every((card) => card.classList.contains('flip'))) {
       setTimeout(() => {
         stopTimer()
+        startConfetti()
         alert("Вы победили!");
       }, 1500)
     }
